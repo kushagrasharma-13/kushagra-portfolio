@@ -28,7 +28,11 @@ const HuggingFaceIcon = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
 );
 
 
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
+export default function ProjectDetailPage({
+    params,
+}: {
+    params: { slug: string };
+}) {
     const [isHovered, setIsHovered] = useState(false);
     const [showVideo, setShowVideo] = useState(false);
 
