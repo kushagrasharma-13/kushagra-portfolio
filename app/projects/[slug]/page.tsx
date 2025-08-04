@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, use } from 'react';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 import projects from '@/data/projects.json';
@@ -31,12 +31,19 @@ const HuggingFaceIcon = (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
 export default function ProjectDetailPage({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }) {
+    // Use the `use` hook to unwrap the Promise
+    const { slug } = use(params);
+
     const [isHovered, setIsHovered] = useState(false);
     const [showVideo, setShowVideo] = useState(false);
 
-    const project = projects.find(p => p.slug === params.slug);
+    const project = projects.find(p => p.slug === slug);
+
+    if (!project) {
+        notFound();
+    }
 
     if (!project) {
         notFound();
