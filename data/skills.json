@@ -1,0 +1,50 @@
+{
+    "programming": [
+        "Java",
+        "Python"
+    ],
+    "ml_dl_nlp": [
+        "NLP",
+        "RAG",
+        "GANs",
+        "Agentic AI",
+        "Deep Learning",
+        "Machine Learning",
+        "Data Analysis & Visualization",
+        "Predictive & Statistical Modeling"
+    ],
+    "frameworks_libraries": [
+        "Flask",
+        "Keras",
+        "NumPy",
+        "Pandas",
+        "Django",
+        "Pytest",
+        "FastAPI",
+        "Selenium",
+        "LangChain",
+        "PyAutoGUI",
+        "Streamlit",
+        "TensorFlow",
+        "Scikit-learn",
+        "BeautifulSoup"
+    ],
+    "databases_cloud_devops": [
+        "AWS",
+        "SQL",
+        "Azure",
+        "Docker",
+        "Qdrant",
+        "MongoDB",
+        "OpenAPI",
+        "Swagger",
+        "PostgreSQL"
+    ],
+    "others": [
+        "CI/CD",
+        "Leadership",
+        "Project Management",
+        "Team Collaboration",
+        "Agile Methodologies"
+    ]
+}

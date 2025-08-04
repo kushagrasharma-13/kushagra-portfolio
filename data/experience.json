@@ -1,0 +1,146 @@
+[
+    {
+        "id": "e2e_cloud",
+        "role": "Software Development Engineer in Test (SDET)",
+        "company": "E2E Cloud",
+        "company_url": "https://www.e2enetworks.com/",
+        "period": "Jan 2025 - Present",
+        "location": "Delhi, India (On-site)",
+        "description": [
+            "Spearheaded API automation for critical infrastructure services including VPCs, Kubernetes Services, Shared File Systems, and Compute Nodes.",
+            "Developed test suites using Swagger CLI and OpenAPI, ensuring consistent and developer-friendly documentation.",
+            "Led the testing efforts for internal services like Container Registry, GenAI model fine-tuning APIs, and OpenNebula orchestration layer.",
+            "Wrote and reviewed integration tests using Pytest for E2E SDKs, with a focus on modularity and maintainability.",
+            "Standardized API test structures and enforced code quality via internal code reviews and review checklists.",
+            "Collaborated with DevOps and Engineering teams to validate cloud-native features like node scaling, VM lifecycle management, and quota policies.",
+            "Created structured release notes summarizing feature changes, test coverage, and user-facing impacts.",
+            "Contributed to both manual and exploratory testing efforts for unreleased services and production hotfixes."
+        ],
+        "skills": [
+            "API Automation",
+            "Swagger/OpenAPI",
+            "Pytest",
+            "Cloud Infrastructure",
+            "CI/CD",
+            "Kubernetes",
+            "Docker",
+            "Container Registry",
+            "Manual Testing",
+            "Test Design"
+        ],
+        "tools": [
+            "Swagger CLI",
+            "React",
+            "OpenAPI",
+            "Pytest",
+            "Postman",
+            "Git",
+            "Zoho"
+        ],
+        "highlights": [
+            "Designed reusable API test workflows that improved onboarding for new QA engineers.",
+            "Suggested improvements to automation logic and mock API integration, speeding up regression cycles.",
+            "Played a central role in aligning documentation and test coverage across product teams."
+        ]
+    },
+    {
+        "id": "whatbytes",
+        "role": "Engineering Intern",
+        "company": "WhatBytes",
+        "company_url": "https://www.whatbytes.com/",
+        "period": "Nov 2024 - Jan 2025",
+        "location": "Bangalore, India (Remote)",
+        "description": [
+            "Built Django-based backend systems to integrate ad platforms like TikTok, LinkedIn, and Google Ads.",
+            "Developed campaign orchestration flows and metrics pipelines for real-time analytics.",
+            "Integrated Stripe for seamless payments and managed secure authentication workflows.",
+            "Delivered campaign reporting tools tailored for non-technical users."
+        ],
+        "skills": [
+            "Django",
+            "Backend Development",
+            "PostgreSQL",
+            "Stripe Integration",
+            "AdTech",
+            "Authentication"
+        ],
+        "tools": [
+            "Django",
+            "PostgreSQL",
+            "Stripe",
+            "Google Ads API",
+            "TikTok Ads API"
+        ],
+        "highlights": [
+            "Collaborated with Thirdi.ai, a high-profile client, and helped deploy production-ready code.",
+            "Built real-time campaign insights pipeline with minimal latency.",
+            "Improved ad ops usability by creating custom reporting tools for marketers."
+        ]
+    },
+    {
+        "id": "storyvord",
+        "role": "AI and Backend Intern",
+        "company": "StoryVord Ltd.",
+        "company_url": "https://storyvord.com/",
+        "period": "May 2024 - Jul 2024",
+        "location": "London, UK (Remote)",
+        "description": [
+            "Built 3 out of 5 AI-powered assistant bots for streamlining film production tasks using LLMs.",
+            "Developed REST APIs with Django and integrated them into Azure-hosted backend systems.",
+            "Implemented bots for compliance (legal rules), culture (local norms), and logistics (travel planning).",
+            "Worked across frontend/backend/AI teams and contributed to architecture and scalability improvements."
+        ],
+        "skills": [
+            "LLMs",
+            "Django",
+            "REST APIs",
+            "Backend Engineering",
+            "Azure",
+            "AI Agents",
+            "Cross-functional Collaboration"
+        ],
+        "tools": [
+            "Python",
+            "Django",
+            "Azure",
+            "REST Framework",
+            "LangChain"
+        ],
+        "highlights": [
+            "Boosted backend performance by 20% via optimized data handling and deployment strategy.",
+            "Delivered AI automation in a domain (film production) with complex operational workflows.",
+            "Successfully integrated real-time third-party APIs into multiple assistant bots."
+        ]
+    },
+    {
+        "id": "taccso",
+        "role": "LibreChat Integration Intern",
+        "company": "Taccso",
+        "company_url": "https://taccso.com/",
+        "period": "Dec 2024 - Dec 2024",
+        "location": "Remote",
+        "description": [
+            "Integrated LibreChat into Taccso's platform after studying its source code and documentation in depth.",
+            "Enabled model selection, document upload with retention, and semantic search within chat interface.",
+            "Configured backend logic to support file-based interactions with LLM agents in a production-grade setup."
+        ],
+        "skills": [
+            "LibreChat",
+            "Backend Configuration",
+            "LLM Integration",
+            "Semantic Search",
+            "AI UX"
+        ],
+        "tools": [
+            "LibreChat",
+            "Python",
+            "LLMs",
+            "Vector Stores"
+        ],
+        "highlights": [
+            "Independently shipped the entire integration within a short one-month internship window.",
+            "Added major AI capabilities to an early-stage platform with minimal external support.",
+            "Expanded Taccso's product utility by enabling file-based contextual interactions with chatbots."
+        ]
+    }
+]

@@ -1,0 +1,737 @@
+[
+    {
+        "slug": "ai-powered-voice-assistant",
+        "title": "AI-Powered Voice Assistant",
+        "category": "LLM & Generative AI",
+        "subtitle": "Team CodeX Sigma | IBM ICE National Hackathon 2024 Finalist",
+        "summary": "This AI-powered voice assistant, built by a five-member team for the Code Crunch 2024 National Hackathon, acts as an intelligent task executor. It enables users to interact with their system and external services using natural voice commands to launch applications, send messages, generate professional emails, schedule reminders, and fetch real-time information. The system is designed to be highly modular and scalable with a plugin-based skill architecture.",
+        "techStack": [
+            "Python",
+            "PyAutoGUI",
+            "Azure Cognitive Services",
+            "MongoDB",
+            "Flask",
+            "MERN Stack",
+            "GroqAI",
+            "Autogen",
+            "Pyttsx3",
+            "SpeechRecognition"
+        ],
+        "keyFeatures": [
+            "Voice Triggering & Multimodal Input: Activates upon being called by name and supports both voice and text input.",
+            "Professional Email Generation: Listens for subject/context and generates well-structured emails using LLM-backed prompting.",
+            "Messaging & Communication: Sends real-time messages via WhatsApp and Telegram using GUI automation.",
+            "Multi-turn Dialogue & Context Tracking: Remembers previous inputs to handle follow-up queries fluidly.",
+            "Calendar & Reminder Integration: Schedules tasks, events, and reminders with voice commands."
+        ],
+        "architecture": [
+            {
+                "component": "STT (Speech-to-Text)",
+                "description": "Converts user speech to text using Azure Cognitive Services"
+            },
+            {
+                "component": "NLU (Natural Language Understanding)",
+                "description": "Identifies intents and extracts entities using Azure and optionally BERT/GPT-based parsing"
+            },
+            {
+                "component": "Custom Skill Manager",
+                "description": "Matches intents to task handlers (e.g., reminders, emails, IoT, calendars)"
+            },
+            {
+                "component": "TTS (Text-to-Speech)",
+                "description": "Synthesizes responses using Azure Speech TTS and pyttsx3"
+            },
+            {
+                "component": "Context Manager",
+                "description": "Maintains conversation state across multi-turn interactions"
+            }
+        ],
+        "impact": [
+            "Finalist project at IBM ICE National Hackathon 2024.",
+            "Reduced email drafting time by 40%.",
+            "Demonstrated real-time voice interface reliability with low latency."
+        ],
+        "learning": "The modular architecture encourages plug-and-play custom skills, showcasing a design ready for scalability and future enhancements like full home automation.",
+        "github_repo": null,
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": "https://www.youtube.com/watch?v=NunO_qlU3n0"
+    },
+    {
+        "slug": "rag-patent-qa-system",
+        "title": "RAG Patent Q&A System",
+        "category": "LLM & Generative AI",
+        "subtitle": "Solo Project",
+        "summary": "A fully functional Retrieval-Augmented Generation (RAG) system built to answer legal and procedural questions based on Indian patent law documents. The system integrates Qdrant vector search, LLM-based reasoning, and a FastAPI-based interaction layer to enable domain-specific QA over large legal PDFs. It leverages GroqAI’s Llama 3.1 8B for real-time generation and is deployed with Docker on AWS.",
+        "techStack": [
+            "Python",
+            "FastAPI",
+            "Qdrant Cloud",
+            "LangChain",
+            "GroqAI",
+            "Sentence Transformers",
+            "Docker",
+            "AWS"
+        ],
+        "keyFeatures": [
+            "RAG Pipeline for Patent Documents: Supports natural language questions on Indian patent policies, acts, and procedural rules.",
+            "Vector Database via Qdrant: Over 1000 chunked sentence embeddings indexed using the bge-large-en sentence transformer.",
+            "Multi-step Retrieval + Reasoning: Retrieves the 3 most relevant chunks to generate safe, relevant answers.",
+            "Minimal Web Interface: FastAPI backend with Jinja2 templating for a clean HTML interaction layer.",
+            "Document Attribution: Answers are paired with the exact source content chunk for verifiability."
+        ],
+        "architecture": [
+            {
+                "component": "LLM",
+                "description": "GroqAI's llama-3.1-8b-instant via langchain_groq"
+            },
+            {
+                "component": "Vector Store",
+                "description": "Qdrant Cloud hosted patent_database collection"
+            },
+            {
+                "component": "Embedding Model",
+                "description": "BAAI/bge-large-en via SentenceTransformer"
+            },
+            {
+                "component": "RAG Chain",
+                "description": "LangChain's RetrievalQA with custom prompt + source doc tracing"
+            }
+        ],
+        "impact": [
+            "Innovated a Qdrant-based vector database with over 1000 sentence embeddings.",
+            "Increased user satisfaction by approximately 40% based on qualitative feedback from testers."
+        ],
+        "learning": "Built from scratch, this project shows mastery over LangChain, LLMs, vector DBs, and FastAPI, applying cutting-edge AI techniques to a niche and high-impact legal domain. It is fully deployed, interactive, and reproducible—ideal for AI-first SaaS use cases.",
+        "github_repo": null,
+        "huggingface_link": "https://huggingface.co/spaces/kushagrasharma-13/patent",
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "brain-disease-detection-app",
+        "title": "Brain Disease Detection Web App",
+        "category": "Computer Vision",
+        "subtitle": "Solo Project",
+        "summary": "An end-to-end medical AI diagnostic platform built with Streamlit, capable of detecting brain diseases from MRI images. The platform uses MongoDB for secure user authentication and TensorFlow/Keras models to classify Alzheimer’s disease (4 stages) and brain tumors (4 types) with over 90% accuracy.",
+        "techStack": [
+            "Python",
+            "TensorFlow",
+            "Keras",
+            "Streamlit",
+            "MongoDB",
+            "OpenCV",
+            "Bcrypt"
+        ],
+        "keyFeatures": [
+            "User Authentication: Secure login/registration with password hashing (bcrypt) stored in MongoDB.",
+            "Alzheimer's Detection: 4-category classification (Mild, Moderate, Very Mild, Non-Demented).",
+            "Brain Tumor Detection: 4-category classification (Glioma, Meningioma, Pituitary, No Tumor).",
+            "Deep Learning Inference: Real-time prediction using trained .h5 models loaded at runtime."
+        ],
+        "architecture": [
+            {
+                "component": "Model Loader",
+                "description": "Loads .h5 models using tf.keras.models.load_model() for Alzheimer & Brain Tumor"
+            },
+            {
+                "component": "MongoDB",
+                "description": "Stores user records (name, email, username, hashed passwords, salt)"
+            },
+            {
+                "component": "Image Processor",
+                "description": "Converts uploaded MRI images to OpenCV arrays, resizes them to required input shape"
+            },
+            {
+                "component": "Session State",
+                "description": "Managed via st.session_state to preserve user login and navigation state"
+            }
+        ],
+        "impact": [
+            "Achieved >90% classification accuracy for both Alzheimer and Brain Tumor models on test sets.",
+            "Demonstrates practical use of AI in healthcare diagnostics.",
+            "Rejected non-MRI images with a strict probability threshold to ensure reliability."
+        ],
+        "learning": "Fully built—from authentication to model integration—by a single developer. Validates the ability to independently handle model training, frontend/backend integration, and user security & session management.",
+        "github_repo": null,
+        "huggingface_link": "https://huggingface.co/spaces/kushagrasharma-13/streamlit-medical-app-v2",
+        "kaggle_link": "https://www.kaggle.com/code/kushagrasharma133/brain-tumor-app",
+        "youtube_link": null
+    },
+    {
+        "slug": "prakriti-plant-disease-detection",
+        "title": "Prakriti - Plant Disease Detection and Remedy System",
+        "category": "Computer Vision",
+        "subtitle": "8-Hour Hackathon Project | GLA University",
+        "summary": "A smart agriculture assistant built in an 8-hour hackathon to detect plant diseases from leaf images and provide actionable remedies. Kushagra led backend development, building the model-serving API with PyTorch and Flask, and deploying the complete stack on AWS EC2. The system classifies 39 plant diseases and returns a diagnosis, prevention steps, and recommended products.",
+        "techStack": [
+            "Django",
+            "PyTorch",
+            "Flask",
+            "CNN",
+            "AWS EC2",
+            "TypeScript",
+            "Pandas",
+            "NumPy"
+        ],
+        "keyFeatures": [
+            "Image-Based Diagnosis: Classifies 39 plant diseases across 14+ crops using a deep CNN.",
+            "PyTorch-Based Inference API: A Flask-based pipeline for image preprocessing, model prediction, and metadata return.",
+            "Remedy Recommendation System: For each disease, the system returns its name, description, prevention steps, and supplement details.",
+            "Cloud Deployment: The entire Flask + CNN API was containerized and hosted on AWS EC2 within the 8-hour timeframe."
+        ],
+        "architecture": [
+            {
+                "component": "Model",
+                "description": "CNN with 4 Conv Blocks (32→256 filters) and 2 Dense layers"
+            },
+            {
+                "component": "Framework",
+                "description": "PyTorch for training and inference"
+            },
+            {
+                "component": "API Layer",
+                "description": "Flask with CORS enabled"
+            },
+            {
+                "component": "Deployment",
+                "description": "AWS EC2 (Ubuntu) using pip + Python v3.10"
+            }
+        ],
+        "impact": [
+            "Built and fully deployed on the cloud within an 8-hour hackathon.",
+            "Integrates deep learning, inference APIs, CSV-based intelligence, and cloud infra."
+        ],
+        "learning": "This project showcases ML deployment readiness, backend API engineering, secure file handling, and cloud devops exposure (AWS EC2, API config), all completed under intense time pressure.",
+        "github_repo": "https://github.com/kushagrasharma-13/Plant_Health/",
+        "huggingface_link": null,
+        "kaggle_link": "https://www.kaggle.com/code/kushagrasharma133/plant-disease-prediction",
+        "youtube_link": "https://www.youtube.com/watch?v=gw9MVAaelIs"
+    },
+    {
+        "slug": "medical-diagnosis-assistant",
+        "title": "Medical Diagnosis Assistant",
+        "category": "LLM & Generative AI",
+        "subtitle": "8-Hour Hackathon Project | GLA University",
+        "summary": "A full-stack AI application providing multi-dimensional healthcare guidance (medical, nutritional, psychological). Developed in an 8-hour hackathon, Kushagra led the backend system using Django REST and LLM integrations, deploying it on AWS EC2. The system uses Groq’s Llama 3–70B model via Autogen agents to simulate a team of specialists, providing advice and generating concise history reports.",
+        "techStack": [
+            "Django REST",
+            "Python",
+            "Llama 3-70B (Groq)",
+            "Autogen",
+            "React",
+            "AWS EC2",
+            "Streamlit",
+            "SpeechRecognition"
+        ],
+        "keyFeatures": [
+            "LLM-Powered Assistant Agents: Three agents simulate expert roles for diagnosis, diet, and mental health on Groq's llama3-70b-8192 model.",
+            "Concise Medical History Generator: Each agent's output is compressed into a 25-word summary for longitudinal tracking.",
+            "Health Profile Management: A Django ORM-based model stores and automatically updates user health data.",
+            "Voice Interaction Layer: A hands-free interface using speech_recognition and pyttsx3 for input and audio feedback."
+        ],
+        "architecture": [
+            {
+                "component": "Backend",
+                "description": "Django + Django REST Framework"
+            },
+            {
+                "component": "LLM",
+                "description": "groq via autogen with custom AssistantAgent classes"
+            },
+            {
+                "component": "Deployment",
+                "description": "Hosted on AWS EC2"
+            },
+            {
+                "component": "Voice Layer",
+                "description": "Separate Streamlit/Python module with speech-to-text and TTS"
+            }
+        ],
+        "impact": [
+            "Advanced agentic design pattern applied in a healthcare domain.",
+            "Seamless blend of LLM automation, a REST backend, and a frontend UX, completed in an 8-hour sprint.",
+            "Voice assistant enabled hands-free interaction and accessibility."
+        ],
+        "learning": "This project showcases the ability to engineer full-stack LLM-based applications, demonstrating practical understanding of agent orchestration, cloud deployment, and real-world usability under time constraints.",
+        "github_repo": "https://github.com/kushagrasharma-13/HealthCare_Daignosis_Assistant/",
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": "https://www.youtube.com/watch?v=your_video_id"
+    },
+    {
+        "slug": "logistics-load-anomaly-detection",
+        "title": "Tracking Logistics Load: Incorrect Package Dimensions Detection",
+        "category": "Data Science & Analytics",
+        "subtitle": "Solo Micro Experience Project",
+        "summary": "This project, completed for a certified micro-experience, aimed to detect incorrectly logged package dimensions in a large logistics dataset. Wrote every line of code without AI assistance, using 5 independent anomaly detection techniques (e.g., IQR, z-scores) to analyze trends, generate visualizations, and create a comprehensive report for logistics monitoring teams.",
+        "techStack": [
+            "Python",
+            "Pandas",
+            "NumPy",
+            "Matplotlib",
+            "Seaborn",
+            "Google Colab"
+        ],
+        "keyFeatures": [
+            "Analysis of Package Data: Analyzed and corrected inconsistencies in package volume and weight logs from a dataset with over 86,000 entries.",
+            "Custom Anomaly Detection: Implemented 5 custom logic rules, including static thresholds, industry-specific thresholds, IQR-based outlier detection, and high-deviation detection.",
+            "Client-Level Trend Analysis: Generated insights for client- and industry-level dimension trends with detailed plots and tabular breakdowns."
+        ],
+        "impact": [
+            "IQR-based logic (Logic 3) proved most effective at capturing subtle outliers.",
+            "Credential ID: BSL/2023/MX/1652."
+        ],
+        "learning": "This project showcases discipline in self-driven learning, data investigation, and statistical rigor, as no AI-assisted tools were used. It reflects strong data science fluency and attention to detail.",
+        "github_repo": "https://github.com/kushagrasharma-13/Micro_Experiences",
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "lung-cancer-detection-system",
+        "title": "Lung Cancer Detection System",
+        "category": "Computer Vision",
+        "subtitle": "8-Hour Hackathon Project | GLA University",
+        "summary": "An AI-driven lung cancer diagnosis assistant built during an 8-hour hackathon. It integrates classical ML (SVC) and deep learning (MobileNetV3) models into a Django REST backend. The system analyzes both textual symptom descriptions and chest X-ray images to detect lung cancer and leverages a GroqAI-powered LLM for second-opinion validation and diagnosis reasoning.",
+        "techStack": [
+            "Python",
+            "Django REST",
+            "Scikit-learn",
+            "Keras",
+            "SVC",
+            "MobileNetV3",
+            "OpenCV",
+            "Streamlit",
+            "Autogen",
+            "GroqAI"
+        ],
+        "keyFeatures": [
+            "Dual-Mode Diagnosis: Accepts both textual (symptoms, age, etc.) and visual (X-ray images) inputs for cancer detection.",
+            "Chest X-ray Analysis: A fine-tuned MobileNetV3Small model classifies X-ray images into cancerous vs. non-cancerous.",
+            "Symptom-based Prediction: An SVC model uses structured patient data (age, smoking habits) to classify risk.",
+            "LLM Reasoning: A GroqAI-powered assistant generates human-like medical feedback using user inputs, offering deeper insight into predictions."
+        ],
+        "impact": [
+            "Integrated multiple models (classical ML, Deep Learning, and LLM) into a unified RESTful backend.",
+            "Successfully processed clinical datasets and X-ray formats within a single pipeline under competitive hackathon pressure."
+        ],
+        "learning": "This project showcases the ability to integrate diverse model types (ML, DL, LLM) into a single system and demonstrates the use of LLMs for structured medical explanations.",
+        "github_repo": "https://github.com/kushagrasharma-13/lung-cancer",
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "alzheimers-detection-deep-learning",
+        "title": "Alzheimer's Detection with Deep Learning",
+        "category": "Computer Vision",
+        "subtitle": "Solo Research & Model Evaluation Project",
+        "summary": "This project focuses on evaluating and comparing the performance of 20+ modern CNN architectures for detecting Alzheimer's disease stages from MRI brain scan images. Each model variation was manually implemented, trained, and tested to identify the optimal architecture for classification accuracy and generalization.",
+        "techStack": [
+            "TensorFlow",
+            "Keras",
+            "CNN Architectures",
+            "Colab",
+            "NumPy",
+            "Matplotlib",
+            "Seaborn"
+        ],
+        "keyFeatures": [
+            "Comparative Analysis: Trained and evaluated over 20 CNN architectures, including MobileNet, ResNet, VGG, EfficientNet, and ConvNeXt families.",
+            "Transfer Learning: Leveraged pre-trained models with custom top layers for fine-tuning on the Alzheimer's dataset.",
+            "Quantitative Evaluation: Collected detailed metrics for each model, including accuracy, loss, F1-score, and confusion matrices."
+        ],
+        "impact": [
+            "EfficientNetV2B3 showed the best accuracy, while MobileNetV3Small was the most efficient.",
+            "Conducted a methodical empirical study across a wide range of deep learning architectures."
+        ],
+        "learning": "This project clearly demonstrates fluency with transfer learning, model tuning, and performance benchmarking. It's a strong reflection of attention to engineering rigor, reproducibility, and real-world deployment concerns.",
+        "github_repo": "https://github.com/kushagrasharma-13/Alzhimer-s",
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "web-scraping-project",
+        "title": "Web Scraping Project",
+        "category": "Data Science & Analytics",
+        "subtitle": "Solo Work",
+        "summary": "This project demonstrates a short but effective example of web scraping using Python's popular libraries. The goal was to extract relevant data from a live webpage and structure it for analysis or reuse. The code sends HTTP requests, parses HTML content with BeautifulSoup, extracts desired elements, and stores the output in Pandas DataFrames.",
+        "techStack": [
+            "Python",
+            "BeautifulSoup",
+            "Requests",
+            "Pandas",
+            "Jupyter Notebook"
+        ],
+        "keyFeatures": [
+            "HTTP Requests: Used the `requests` library for sending HTTP GET requests to the target website.",
+            "HTML Parsing: Employed `BeautifulSoup` for parsing HTML content and extracting elements.",
+            "Data Structuring: Stored the scraped output in Pandas DataFrames for further processing or export."
+        ],
+        "impact": [
+            "Successfully scraped and displayed structured content from the target website.",
+            "Output was cleaned, formatted, and optionally exportable as CSV or Excel."
+        ],
+        "learning": "The code was modular and can be extended for paginated data or additional tags, serving as a solid foundation for more complex scraping tasks.",
+        "github_repo": null,
+        "huggingface_link": null,
+        "kaggle_link": "https://www.kaggle.com/code/kushagrasharma133/web-scraping",
+        "youtube_link": null
+    },
+    {
+        "slug": "dcgan-skin-lesion-generation",
+        "title": "DCGAN on HAM10000: Skin Lesion Image Generation",
+        "category": "Computer Vision",
+        "subtitle": "Solo Project",
+        "summary": "This project focuses on implementing a Deep Convolutional Generative Adversarial Network (DCGAN) to generate synthetic skin lesion images based on the HAM10000 dataset. The DCGAN architecture was trained on preprocessed images to learn their distribution and generate new, realistic lesion samples for data augmentation.",
+        "techStack": [
+            "Python",
+            "TensorFlow",
+            "Keras",
+            "DCGAN",
+            "Google Colab"
+        ],
+        "keyFeatures": [
+            "DCGAN Implementation: Built a DCGAN with a generator and a discriminator to generate synthetic skin lesion images.",
+            "Data Augmentation: The goal was to augment the HAM10000 dataset with high-quality synthetic images for training deep learning classifiers.",
+            "Training and Convergence: Successfully trained the DCGAN for multiple epochs and generated realistic-looking synthetic lesions after convergence."
+        ],
+        "impact": [
+            "Demonstrated hands-on application of GANs in a medical imaging context.",
+            "Proved useful for data augmentation in low-sample-size classes of medical datasets."
+        ],
+        "learning": "This project provided valuable experience with training stability challenges and hyperparameter tuning for GANs.",
+        "github_repo": null,
+        "huggingface_link": null,
+        "kaggle_link": "https://www.kaggle.com/code/kushagrasharma133/dcgan-on-ham10000-skin-cancer",
+        "youtube_link": null
+    },
+    {
+        "slug": "ai-powered-company-website-scraper",
+        "title": "AI-Powered Company Website Scraper",
+        "category": "LLM & Generative AI",
+        "subtitle": "Solo Project",
+        "summary": "A full-fledged web scraping and AI-powered analysis tool that extracts, cleans, and summarizes company information from websites. It uses both static and JavaScript-rendered scraping methods and generates structured business insights using Llama 3–70B via LangChain and Groq. Users can input any company URL, and the app will crawl all valid internal links, extract textual content, and generate an AI-based breakdown of the company.",
+        "techStack": [
+            "Python",
+            "Streamlit",
+            "BeautifulSoup",
+            "Selenium",
+            "Cloudscraper",
+            "LangChain (Groq LLM)"
+        ],
+        "keyFeatures": [
+            "Hybrid Scraper: Combines requests-based scraping with headless Chrome via Selenium for dynamic content.",
+            "Adaptive Chunking: Handles token-heavy content up to 32K tokens for large websites.",
+            "Structured AI Analysis: Uses a custom prompt with fallback handling for missing data to generate a detailed company overview."
+        ],
+        "impact": [
+            "Built for deep crawling of marketing and B2B websites.",
+            "Supports high-token analysis for long-form content."
+        ],
+        "learning": "A reusable and modular tool for business intelligence and market research, demonstrating advanced web scraping and LLM application skills.",
+        "github_repo": null,
+        "huggingface_link": "https://huggingface.co/spaces/kushagrasharma-13/company-details-scraper",
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "resume-parser-to-json",
+        "title": "Resume Parser to JSON",
+        "category": "Data Science & Analytics",
+        "subtitle": "Solo Project",
+        "summary": "A lightweight tool that extracts and organizes resume content from PDF files into structured JSON format. The system uses rule-based parsing and regular expressions to identify and categorize resume components like contact info, work experience, education, and skills. Users can upload any resume PDF through a Streamlit web interface, and the app parses the content into a machine-readable format.",
+        "techStack": [
+            "Python",
+            "Streamlit",
+            "PyPDF2",
+            "Regular Expressions"
+        ],
+        "keyFeatures": [
+            "PDF Upload and Parsing: Supports uploading a resume PDF or falling back to a default file.",
+            "Rule-based Parser: Extracts contact information, professional experience, projects, skills, education, and more using section keyword detection.",
+            "Regex-based Contact Info Extraction: Identifies phone numbers, email addresses, LinkedIn, and GitHub URLs."
+        ],
+        "impact": [
+            "Cleanly separates content without relying on any ML/NLP models.",
+            "Fully offline and self-contained—no external API dependencies."
+        ],
+        "learning": "Provides a foundational structure for a future AI-driven resume analyzer, showcasing skills in data extraction and structuring.",
+        "github_repo": null,
+        "huggingface_link": "https://huggingface.co/spaces/kushagrasharma-13/Resume_Parser_HuggingFace",
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "medical-assistance-system-multi-agent-ai",
+        "title": "Medical Assistance System (Multi-Agent AI)",
+        "category": "LLM & Generative AI",
+        "subtitle": "Solo Project",
+        "summary": "A Streamlit-based multi-agent AI system that simulates a collaborative team of healthcare specialists: a Medical Assistant, a Nutrition Assistant, and a Psychological Assistant. Users input health-related data, and each AI agent provides targeted, role-specific recommendations using Groq's LLaMA3-8B model. The goal is to offer personalized and domain-specific advice through intelligent agent delegation.",
+        "techStack": [
+            "Python",
+            "Streamlit",
+            "AutoGen",
+            "Groq LLM (LLaMA3-8B)"
+        ],
+        "keyFeatures": [
+            "Multi-Agent System: Simulates a team of healthcare specialists with distinct roles.",
+            "Personalized Advice: Generates recommendations based on user-provided disease, symptoms, age, gender, and medical history.",
+            "LLM Integration: Powered by AutoGen and Groq's LLaMA3-8B model with custom system messages for each agent."
+        ],
+        "impact": [
+            "Functional demo of role-based LLM agent orchestration.",
+            "Modular architecture with clearly separated logic for each assistant."
+        ],
+        "learning": "Easy to adapt for clinical decision support or health chatbot prototypes, showcasing advanced LLM agent design.",
+        "github_repo": "https://github.com/kushagrasharma-13/medical_remedy",
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "django-user-authentication-system",
+        "title": "Django User Authentication System",
+        "category": "Backend & Cloud",
+        "subtitle": "Short-Term Learning Project",
+        "summary": "A full-stack user authentication system built using Django, designed to help new users register, securely log in, manage sessions, and interact with protected pages. The project was created as a foundational exercise to gain a deeper understanding of Django’s built-in authentication and middleware system. It mimics the core behavior of production-ready authentication platforms but with customizability in view design and session handling.",
+        "techStack": [
+            "Django",
+            "Python",
+            "HTML",
+            "CSS",
+            "SQLite",
+            "Django Templates",
+            "Bootstrap"
+        ],
+        "keyFeatures": [
+            "User Registration & Login: Full Django-based auth implementation with input validation and feedback.",
+            "Session Management: Uses Django session middleware to track active users.",
+            "Access Restriction: Certain routes/pages are protected and only available to logged-in users."
+        ],
+        "impact": [
+            "Built from scratch with all components hand-coded.",
+            "Strengthened understanding of Django's template/view/router system."
+        ],
+        "learning": "Modular enough to be reused in production-ready apps, serving as a strong foundation for more complex Django projects.",
+        "github_repo": "https://github.com/kushagrasharma-13/django_user_auth",
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": "https://www.youtube.com/watch?v=QJtgCAhcvJU"
+    },
+    {
+        "slug": "catalys-assessment-web-app",
+        "title": "Catalys Assessment Web App",
+        "category": "Backend & Cloud",
+        "subtitle": "Short-Term Practical Project",
+        "summary": "A lightweight Flask-based web application designed to assist users in extracting insights from a structured knowledge base. It enables users to interactively view input data, feed it to a GPT-powered summarization agent, and retrieve a cleanly formatted response. The project simulates a real-world business intelligence tool where users can query summarized content against predefined data contexts.",
+        "techStack": [
+            "Python",
+            "Flask",
+            "OpenAI API",
+            "BeautifulSoup",
+            "Requests",
+            "Jinja2",
+            "HTML",
+            "Bootstrap"
+        ],
+        "keyFeatures": [
+            "LLM Summarization: Uses OpenAI's GPT to generate summaries based on user prompts.",
+            "Custom Prompt Injection: Feeds structured data + dynamic questions into a templated prompt.",
+            "Flask Routing: Manages a clear UX with three main routes—Home, Fetch Data, and Processed Response."
+        ],
+        "impact": [
+            "Hands-on practice with GPT integration via Flask.",
+            "Clear demonstration of context-prompt-response cycle."
+        ],
+        "learning": "A reusable boilerplate for any LLM-based summarizer project, reinforcing knowledge of prompt engineering, routing, and UI templating.",
+        "github_repo": "https://github.com/kushagrasharma-13/Catalys_Assesment",
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "ddos-attack-simulation-mitigation-platform",
+        "title": "DDoS Attack Simulation & Mitigation Platform",
+        "category": "Backend & Cloud",
+        "subtitle": "GLA University Hackathon | Team Project",
+        "summary": "An end-to-end simulation of a Distributed Denial of Service (DDoS) attack alongside the architecture to detect and mitigate such cyber threats in real-time. Designed during an 8-hour hackathon, the system consists of a backend DDoS attack simulator (written in Java), a Flask-powered dashboard to visualize traffic, and a machine learning-powered defense layer that can detect and block malicious traffic.",
+        "techStack": [
+            "Python",
+            "Java",
+            "Flask",
+            "Machine Learning",
+            "HTML",
+            "Shell Scripting",
+            "Scikit-learn"
+        ],
+        "keyFeatures": [
+            "Attack Simulator: Java-based DDoS traffic generator designed to simulate high traffic from multiple fake IPs.",
+            "Real-time Dashboard: Web-based Flask UI to visualize incoming traffic and trigger mitigation workflows.",
+            "ML-based Detection: Integrated model classifies traffic based on statistical features like request rate and IP frequency."
+        ],
+        "impact": [
+            "Developed strong understanding of DDoS attacks and mitigation.",
+            "Implemented full simulation → detection → prevention pipeline."
+        ],
+        "learning": "This project provided hands-on learning with cybersecurity attack surfaces and real-time defense logic, including how to combine Java-based simulation with Python ML pipelines.",
+        "github_repo": "https://github.com/kushagrasharma-13/DDOS",
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "machine-learning-project-portfolio",
+        "title": "Machine Learning Project Portfolio",
+        "category": "Data Science & Analytics",
+        "subtitle": "Self-paced / Practice Projects",
+        "summary": "A comprehensive collection of 20+ self-implemented machine learning notebooks covering classification, regression, dimensionality reduction, and model evaluation techniques. Each notebook tackles a real-world or synthetic dataset and demonstrates end-to-end preprocessing, feature selection, model training, and evaluation. The project includes classic algorithms like Linear Regression, Decision Trees, SVMs, and Naive Bayes, alongside advanced practices such as PCA and data cleaning workflows.",
+        "techStack": [
+            "Python",
+            "Scikit-learn",
+            "Keras",
+            "NumPy",
+            "Pandas",
+            "Matplotlib",
+            "Seaborn",
+            "Jupyter Notebook",
+            "PCA",
+            "TensorFlow",
+            "OpenCV"
+        ],
+        "keyFeatures": [
+            "Comprehensive Coverage: Includes a wide range of ML algorithms for regression, classification, and dimensionality reduction.",
+            "Hands-on Implementation: Every algorithm was implemented from scratch or using minimal wrappers to maximize learning.",
+            "Real-world Datasets: Applied to various datasets, including stock prices, census data, and house prices."
+        ],
+        "impact": [
+            "Solidified foundational ML knowledge across all core techniques.",
+            "Used in interviews and internship prep to demonstrate algorithmic understanding."
+        ],
+        "learning": "All models and evaluation logic were written from scratch for full conceptual clarity, making this a strong showcase of fundamental ML skills.",
+        "github_repo": "https://github.com/kushagrasharma-13/Python",
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "convolutional-neural-network-projects",
+        "title": "Convolutional Neural Network Projects",
+        "category": "Computer Vision",
+        "subtitle": "Personal Project",
+        "summary": "A collection of multiple end-to-end implementations of CNN-based deep learning models, each targeted at specific real-world classification tasks. Each dataset was treated as a separate module with its own model pipeline, including preprocessing, augmentation, model definition, training, and evaluation. The datasets used include MNIST, Fashion MNIST, Cats vs. Dogs, and an Animal Image Dataset.",
+        "techStack": [
+            "Python",
+            "Keras",
+            "TensorFlow",
+            "OpenCV",
+            "NumPy",
+            "Matplotlib",
+            "CNN Architectures"
+        ],
+        "keyFeatures": [
+            "Custom CNN Models: Built custom CNNs for image classification from scratch.",
+            "Binary and Multi-class Classification: Implemented accurate classifiers for both binary (dogs vs cats) and multi-class (animals) tasks.",
+            "Data Augmentation: Applied augmentation strategies like rotation, flipping, and zoom to improve model performance."
+        ],
+        "impact": [
+            "Fashion MNIST achieved over 92% validation accuracy with dropout layers.",
+            "Cats vs Dogs model consistently converged to >95% binary accuracy."
+        ],
+        "learning": "This project strengthened fundamentals for a deep learning career path by providing hands-on experience with CNN layers, pooling, and dense connections. The architecture is reusable for future computer vision projects.",
+        "github_repo": "https://github.com/kushagrasharma-13/Convolutional_Neural_Network",
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "artificial-neural-network-suite",
+        "title": "Artificial Neural Network Suite",
+        "category": "Data Science & Analytics",
+        "subtitle": "Solo Project",
+        "summary": "This comprehensive project showcases the implementation of Artificial Neural Networks (ANN) across a range of datasets and problem types—image classification, binary classification, and customer behavior prediction. Each notebook is designed as an independent module, presenting a full ML pipeline—from preprocessing to training, evaluation, and visualization—making it highly modular and reusable. The datasets used include MNIST, Breast Cancer Wisconsin, Digits, Churn Modelling, and Online Shoppers Intention.",
+        "techStack": [
+            "Python",
+            "Keras",
+            "TensorFlow",
+            "NumPy",
+            "Pandas",
+            "Scikit-learn",
+            "Matplotlib",
+            "Seaborn",
+            "Jupyter Notebook"
+        ],
+        "keyFeatures": [
+            "Multi-domain Applications: Applied ANNs to healthcare, finance, retail, and image processing.",
+            "Custom ANN Models: Built fully custom ANN models without using auto ML.",
+            "Extensive Performance Analysis: Evaluated models using accuracy, confusion matrix, precision, and recall."
+        ],
+        "impact": [
+            "Achieved ~84% accuracy on the Churn Modelling dataset.",
+            "Built a foundational understanding of how ANN models differ across dataset types."
+        ],
+        "learning": "This project provided a reusable template for deploying structured ML + ANN pipelines and strengthened the grasp on model tuning, optimization, and practical evaluation techniques.",
+        "github_repo": "https://github.com/kushagrasharma-13/Artificial_Neural_network",
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": null
+    },
+    {
+        "slug": "ai-ready-geeta-dataset-preparation",
+        "title": "AI-Ready Geeta Dataset Preparation",
+        "category": "Data Science & Analytics",
+        "subtitle": "Solo Project | Self-Driven NLP & Data Processing Pipeline",
+        "summary": "This project involved transforming the raw Bhagavad-Gita As It Is PDF into a fully cleaned and structured dataset tailored for use in NLP and LLM-based tasks. All stages—from text extraction and cleaning to semantic structuring—were completed manually and programmatically. Over 40,000+ lines of content were meticulously processed and validated. The final output includes structured chapter-wise JSON files, synonym mappings, and language-normalized text.",
+        "techStack": [
+            "Python",
+            "PyPDF2",
+            "Pandas",
+            "JSON",
+            "Regex",
+            "Manual Curation"
+        ],
+        "keyFeatures": [
+            "End-to-End Pipeline: Converted unstructured religious text into machine-readable form.",
+            "Heavy Cleaning & Parsing: Removed footers, line breaks, special symbols, and inconsistencies.",
+            "Semantic Structuring: Created separate files for Introduction, Chapters, and a Synonym Dictionary."
+        ],
+        "impact": [
+            "Entire process—from concept to final dataset—was executed solely by Kushagra Sharma.",
+            "Manual effort for data correction involved identifying patterns and modifying thousands of lines."
+        ],
+        "learning": "The final dataset is ideal for Question Answering, Semantic Search, and Fine-tuning LLMs, and can be extended to multi-language support with Sanskrit verse alignment.",
+        "github_repo": "https://github.com/kushagrasharma-13/geeta-llm",
+        "huggingface_link": null,
+        "kaggle_link": "https://www.kaggle.com/datasets/kushagrasharma133/geeta-processed-english-data/",
+        "youtube_link": null
+    },
+    {
+        "slug": "kniti-assessment",
+        "title": "Kniti Assessment",
+        "category": "Backend & Cloud",
+        "subtitle": "Solo Project | Evaluation Assignment",
+        "summary": "The Kniti Assessment was a short technical assignment designed to test backend proficiency, data processing, and API structuring. The solution involved working with structured data (JSON-based), validating and processing it, and exposing key operations via a Flask-based backend. This project showcased rapid prototyping abilities and clear API design.",
+        "techStack": [
+            "Python",
+            "JSON",
+            "Flask",
+            "Pandas"
+        ],
+        "keyFeatures": [
+            "Data Parsing & Validation: Ingests and validates JSON data inputs for consistency.",
+            "Custom Logic Implementation: Applies filters, computation, or transformation based on given criteria.",
+            "API Integration: Uses Flask to expose endpoints for testing or interaction."
+        ],
+        "impact": [
+            "Completed quickly and accurately.",
+            "Highlights comfort with JSON pipelines and Python scripting."
+        ],
+        "learning": "Suitable as a backend microservice or as part of a larger ETL/data validation flow.",
+        "github_repo": null,
+        "huggingface_link": null,
+        "kaggle_link": null,
+        "youtube_link": null
+    }
+]
