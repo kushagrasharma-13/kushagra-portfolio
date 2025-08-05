@@ -41,6 +41,9 @@ export default function Footer() {
               </a>
             ))}
           </nav>
+          <p className="text-xs text-gray-600 mb-4 lg:hidden">
+            For the best experience, view on a desktop.
+          </p>
           <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} Kushagra Sharma. All Rights Reserved.
           </p>

@@ -80,7 +80,6 @@ function ContextRecovery({ onContextLost }: { onContextLost: () => void }) {
 
         const handleContextRestored = () => {
             console.log('WebGL context restored');
-            // Force a re-render
             gl.setSize(gl.domElement.width, gl.domElement.height);
         };
 
@@ -97,9 +96,8 @@ function ContextRecovery({ onContextLost }: { onContextLost: () => void }) {
     return null;
 }
 
-// Error Boundary Component
+// Scene Content Component
 function SceneContent({ onContextLost }: { onContextLost: () => void }) {
-    const setActiveNode = useStore((state) => state.setActiveNode);
     const activeNode = useStore((state) => state.activeNode);
     const [isInteracting, setIsInteracting] = useState(false);
     const controlsRef = useRef<any>(null);
@@ -109,20 +107,6 @@ function SceneContent({ onContextLost }: { onContextLost: () => void }) {
             controlsRef.current.enabled = !activeNode;
         }
     }, [activeNode]);
-
-    // Pass isInteracting state to parent for OrbitControls
-    useEffect(() => {
-        const handlePointerMove = () => setIsInteracting(true);
-        const handlePointerLeave = () => setIsInteracting(false);
-
-        window.addEventListener('pointermove', handlePointerMove);
-        window.addEventListener('pointerleave', handlePointerLeave);
-
-        return () => {
-            window.removeEventListener('pointermove', handlePointerMove);
-            window.removeEventListener('pointerleave', handlePointerLeave);
-        };
-    }, []);
 
     return (
         <>
@@ -139,8 +123,8 @@ function SceneContent({ onContextLost }: { onContextLost: () => void }) {
                 enablePan={false}
                 autoRotate={!isInteracting}
                 autoRotateSpeed={0.4}
-                maxPolarAngle={Math.PI}
-                minPolarAngle={0}
+                minPolarAngle={Math.PI / 2}
+                maxPolarAngle={Math.PI / 2}
             />
 
             {skillCategories.map(skill => (
@@ -156,23 +140,16 @@ function SceneContent({ onContextLost }: { onContextLost: () => void }) {
 export default function Scene() {
     const setActiveNode = useStore((state) => state.setActiveNode);
     const activeNode = useStore((state) => state.activeNode);
-    const [isInteracting, setIsInteracting] = useState(false);
     const [hasError, setHasError] = useState(false);
     const [contextLost, setContextLost] = useState(false);
     const [retryCount, setRetryCount] = useState(0);
 
-    const handlePointerEnter = useCallback(() => setIsInteracting(true), []);
-    const handlePointerLeave = useCallback(() => setIsInteracting(false), []);
     const handleBackClick = useCallback(() => setActiveNode(null), [setActiveNode]);
 
     const handleContextLost = useCallback(() => {
         setContextLost(true);
         setRetryCount(prev => prev + 1);
-
-        // Auto-retry after context loss
-        setTimeout(() => {
-            setContextLost(false);
-        }, 1000);
+        setTimeout(() => setContextLost(false), 1000);
     }, []);
 
     const handleRetry = useCallback(() => {
@@ -181,105 +158,50 @@ export default function Scene() {
         setRetryCount(prev => prev + 1);
     }, []);
 
-    // Fallback to 2D if too many context losses
     if (retryCount > 3) {
         return (
-            <div className="relative h-[100vh] w-full bg-[#030712] flex items-center justify-center">
-                <div className="text-center">
-                    <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
-                        Kushagra Sharma
-                    </h1>
-                    <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4 mb-8">
-                        AI Engineer specializing in building intelligent systems, from large language model applications to computer vision diagnostics.
-                    </p>
-                    <div className="flex justify-center gap-4">
-                        <Link href="/projects" className="px-8 py-3 bg-blue-600/80 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-blue-500/80 transition-colors">
-                            View My Work
-                        </Link>
-                    </div>
+            <div className="relative h-[100vh] w-full bg-[#030712] flex items-center justify-center text-center px-4">
+                <div>
+                    <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">Kushagra Sharma</h1>
+                    <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">AI Engineer specializing in building intelligent systems.</p>
+                    <Link href="/projects" className="px-8 py-3 bg-blue-600/80 text-white font-semibold rounded-lg">View My Work</Link>
                     <p className="text-sm text-gray-500 mt-4">3D experience temporarily unavailable</p>
                 </div>
             </div>
         );
     }
 
-    // Error recovery
-    useEffect(() => {
-        if (hasError) {
-            const timer = setTimeout(() => setHasError(false), 2000);
-            return () => clearTimeout(timer);
-        }
-    }, [hasError]);
-
     if (hasError || contextLost) {
         return (
             <div className="relative h-[100vh] w-full bg-[#030712] flex items-center justify-center">
                 <div className="text-center text-white">
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-400 mx-auto mb-4"></div>
-                    <h2 className="text-2xl font-bold mb-2">
-                        {contextLost ? 'Recovering 3D Scene...' : 'Loading 3D Experience...'}
-                    </h2>
+                    <h2 className="text-2xl font-bold mb-2">{contextLost ? 'Recovering 3D Scene...' : 'Loading...'}</h2>
                     <p className="text-gray-300 mb-4">Please wait a moment</p>
-                    {hasError && (
-                        <button
-                            onClick={handleRetry}
-                            className="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-500 transition-colors"
-                        >
-                            Retry
-                        </button>
-                    )}
                 </div>
             </div>
         );
     }
 
     return (
-        <div
-            className="relative h-[100vh] w-full bg-[#030712]"
-            onPointerEnter={handlePointerEnter}
-            onPointerLeave={handlePointerLeave}
-        >
+        <div className="relative h-[100vh] w-full bg-[#030712]">
             <button
                 onClick={handleBackClick}
                 className={`absolute top-20 left-4 z-20 px-4 py-2 bg-gray-700/50 backdrop-blur-sm rounded-lg transition-opacity duration-500 text-white ${activeNode ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             >
                 Back to Overview
             </button>
-
             <Canvas
-                key={retryCount} // Force remount on retry
+                key={retryCount}
                 camera={{ position: [0, 0, 15], fov: 45 }}
-                gl={{
-                    antialias: window.devicePixelRatio > 1.5 ? false : true,
-                    alpha: false,
-                    powerPreference: "default",
-                    failIfMajorPerformanceCaveat: false,
-                    preserveDrawingBuffer: false,
-                    stencil: false,
-                    depth: true
-                }}
-                onError={(error) => {
-                    console.error('Canvas error:', error);
-                    setHasError(true);
-                }}
-                onCreated={({ gl }) => {
-                    // Optimize for mobile devices
-                    gl.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-                }}
-                dpr={[1, 2]}
-                performance={{ min: 0.5 }}
-            // Removed frameloop="demand" to allow continuous animations
+                gl={{ antialias: true, alpha: false, powerPreference: "default" }}
+                onError={() => setHasError(true)}
             >
                 <SceneContent onContextLost={handleContextLost} />
             </Canvas>
-
             <div className={`absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center pointer-events-none transition-opacity duration-500 ${activeNode ? 'opacity-0' : 'opacity-100'}`}>
-                <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-                    Kushagra Sharma
-                </h1>
-                <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
-                    AI Engineer specializing in building intelligent systems, from large language model applications to computer vision diagnostics.
-                </p>
+                <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">Kushagra Sharma</h1>
+                <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">AI Engineer specializing in building intelligent systems, from large language model applications to computer vision diagnostics.</p>
                 <div className="mt-8 flex justify-center gap-4 pointer-events-auto">
                     <Link href="/projects" className="px-8 py-3 bg-blue-600/80 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-blue-500/80 transition-colors">
                         View My Work
