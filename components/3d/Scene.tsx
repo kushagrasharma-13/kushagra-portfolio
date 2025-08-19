@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import * as THREE from 'three';
-import { OrbitControls, Stars } from '@react-three/drei';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import { Canvas, useThree } from '@react-three/fiber';
 import { useRef, useState, useEffect, useCallback } from 'react';
 
 // Data Imports
@@ -32,21 +32,6 @@ const nodePositions: { [key: string]: THREE.Vector3 } = {
     'Data Science & Analytics': new THREE.Vector3(3, -3, -2),
 };
 
-// --- 3D SUB-COMPONENTS ---
-
-function AnimatedStars() {
-    const starsRef = useRef<any>(null);
-
-    useFrame((state, delta) => {
-        if (starsRef.current) {
-            starsRef.current.rotation.x += delta * 0.01;
-            starsRef.current.rotation.y += delta * 0.015;
-        }
-    });
-
-    return <Stars ref={starsRef} radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />;
-}
-
 function ProjectGroup() {
     const activeNode = useStore((state) => state.activeNode);
 
@@ -67,7 +52,6 @@ function ProjectGroup() {
     );
 }
 
-// WebGL Context Recovery Component
 function ContextRecovery({ onContextLost }: { onContextLost: () => void }) {
     const { gl } = useThree();
 
@@ -111,11 +95,9 @@ function SceneContent({ onContextLost }: { onContextLost: () => void }) {
     return (
         <>
             <ContextRecovery onContextLost={onContextLost} />
-            <color attach="background" args={['#030712']} />
             <CameraAnimator />
             <ambientLight intensity={0.5} />
             <pointLight position={[10, 10, 10]} intensity={1} />
-            <AnimatedStars />
 
             <OrbitControls
                 ref={controlsRef}
@@ -184,7 +166,7 @@ export default function Scene() {
     }
 
     return (
-        <div className="relative h-[100vh] w-full bg-[#030712]">
+        <div className="relative h-[100vh] w-full bg-transparent">
             <button
                 onClick={handleBackClick}
                 className={`absolute top-20 left-4 z-20 px-4 py-2 bg-gray-700/50 backdrop-blur-sm rounded-lg transition-opacity duration-500 text-white ${activeNode ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
@@ -194,7 +176,7 @@ export default function Scene() {
             <Canvas
                 key={retryCount}
                 camera={{ position: [0, 0, 15], fov: 45 }}
-                gl={{ antialias: true, alpha: false, powerPreference: "default" }}
+                gl={{ antialias: true, alpha: true, powerPreference: "default" }}
                 onError={() => setHasError(true)}
             >
                 <SceneContent onContextLost={handleContextLost} />

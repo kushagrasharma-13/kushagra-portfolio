@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import GlobalStars from '@/components/3d/GlobalStars';
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,9 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // FIX: Added suppressHydrationWarning to the html tag.
-    // This tells React to ignore minor mismatches caused by browser extensions.
-    <html lang="en" className="bg-gray-950" suppressHydrationWarning>
+    // FIX: Changed bg-gray-950 to bg-transparent to allow the GlobalStars component to be visible.
+    // The html element's solid background was covering the fixed canvas behind it.
+    <html lang="en" className="bg-transparent" suppressHydrationWarning>
       <body className={`${inter.className} text-gray-100 flex flex-col min-h-screen bg-transparent`}>
         <GlobalStars />
         <Header />
@@ -28,6 +29,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
