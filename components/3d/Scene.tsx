@@ -145,7 +145,7 @@ export default function Scene() {
             <div className="relative h-[100vh] w-full bg-[#030712] flex items-center justify-center text-center px-4">
                 <div>
                     <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">Kushagra Sharma</h1>
-                    <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">AI Engineer specializing in building intelligent systems.</p>
+                    <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">Associate Software Engineer focused on Python backend systems, cloud APIs, and GenAI/RAG applications.</p>
                     <Link href="/projects" className="px-8 py-3 bg-blue-600/80 text-white font-semibold rounded-lg">View My Work</Link>
                     <p className="text-sm text-gray-500 mt-4">3D experience temporarily unavailable</p>
                 </div>
@@ -183,7 +183,7 @@ export default function Scene() {
             </Canvas>
             <div className={`absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center pointer-events-none transition-opacity duration-500 ${activeNode ? 'opacity-0' : 'opacity-100'}`}>
                 <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">Kushagra Sharma</h1>
-                <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">AI Engineer specializing in building intelligent systems, from large language model applications to computer vision diagnostics.</p>
+                <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">Associate Software Engineer focused on Python backend systems, cloud platform APIs, AI-native documentation, and GenAI/RAG applications.</p>
                 <div className="mt-8 flex justify-center gap-4 pointer-events-auto">
                     <Link href="/projects" className="px-8 py-3 bg-blue-600/80 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-blue-500/80 transition-colors">
                         View My Work

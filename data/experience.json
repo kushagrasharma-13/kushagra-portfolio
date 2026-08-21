@@ -1,46 +1,115 @@
 [
     {
-        "id": "e2e_cloud",
-        "role": "Software Development Engineer in Test (SDET)",
-        "company": "E2E Cloud",
+        "id": "e2e_cloud_associate_software_engineer",
+        "role": "Associate Software Engineer",
+        "company": "E2E Networks (E2E Cloud)",
         "company_url": "https://www.e2enetworks.com/",
-        "period": "Jan 2025 - Present",
+        "period": "Apr 2026 - Present",
         "location": "Delhi, India (On-site)",
         "description": [
-            "Spearheaded API automation for critical infrastructure services including VPCs, Kubernetes Services, Shared File Systems, and Compute Nodes.",
-            "Developed test suites using Swagger CLI and OpenAPI, ensuring consistent and developer-friendly documentation.",
-            "Led the testing efforts for internal services like Container Registry, GenAI model fine-tuning APIs, and OpenNebula orchestration layer.",
-            "Wrote and reviewed integration tests using Pytest for E2E SDKs, with a focus on modularity and maintainability.",
-            "Standardized API test structures and enforced code quality via internal code reviews and review checklists.",
-            "Collaborated with DevOps and Engineering teams to validate cloud-native features like node scaling, VM lifecycle management, and quota policies.",
-            "Created structured release notes summarizing feature changes, test coverage, and user-facing impacts.",
-            "Contributed to both manual and exploratory testing efforts for unreleased services and production hotfixes."
+            "Working across Python backend engineering, cloud platform APIs, AI-native documentation, billing workflow architecture, and internal developer tooling.",
+            "Helped establish E2E's AI-native documentation layer by restructuring service docs, API references, and developer guides into retrieval-friendly content for stronger LLM discoverability and Ask AI support.",
+            "Built an in-repo API documentation pipeline with DSL/OpenAPI compilation, SSR documentation routes, generated code samples, schema views, and interactive Try It workflows.",
+            "Working on architectural improvements to long-running billing workflows, focusing on execution-time reduction, scalability, maintainability, and operational reliability.",
+            "Re-architected the Parallel File System (EPFS) Django service onto a cluster-driven model, redesigning schemas, delivering 8+ production migrations with backfills, and improving billing accuracy through SKU price snapshotting.",
+            "Refactored 9 duplicated AWX orchestration job classes into a shared parameterized framework across infrastructure provisioning and billing workflows."
         ],
         "skills": [
-            "API Automation",
-            "Swagger/OpenAPI",
-            "Pytest",
-            "Cloud Infrastructure",
-            "CI/CD",
-            "Kubernetes",
-            "Docker",
-            "Container Registry",
-            "Manual Testing",
-            "Test Design"
+            "Python Backend",
+            "Django",
+            "REST APIs",
+            "OpenAPI",
+            "Cloud Platform",
+            "Billing Workflows",
+            "GenAI/RAG",
+            "Developer Experience"
         ],
         "tools": [
-            "Swagger CLI",
-            "React",
+            "Python",
+            "Django",
             "OpenAPI",
+            "Docusaurus",
+            "React",
+            "TypeScript",
+            "AWX",
+            "Git"
+        ],
+        "highlights": [
+            "Current role is software/backend/platform focused, with AI-native documentation and billing architecture as the main story.",
+            "Shifted from historical SDET positioning into backend, platform, API tooling, and cloud developer experience work.",
+            "Keeps cloud API reliability, documentation quality, and billing workflow maintainability aligned across product and engineering teams."
+        ]
+    },
+    {
+        "id": "e2e_cloud_sdet_ai_api_automation",
+        "role": "SDET - AI & API Automation",
+        "company": "E2E Networks (E2E Cloud)",
+        "company_url": "https://www.e2enetworks.com/",
+        "period": "Jul 2025 - Apr 2026",
+        "location": "Delhi, India (On-site)",
+        "description": [
+            "Architected Python/Pytest/Allure API automation for VPCs, Kubernetes, file systems, compute, container registry, and GenAI fine-tuning workflows.",
+            "Built LLM-assisted test analysis tooling for execution summaries, failure-context analysis, and API-change-based suite recommendations through a Streamlit orchestration UI backed by object storage.",
+            "Improved API reliability and release confidence through OpenAPI-based validation, REST API coverage, failure analysis, and structured release notes for cloud platform services.",
+            "Collaborated with backend, DevOps, and product teams on cloud API documentation, developer workflows, internal tooling, bug triage, and release validation."
+        ],
+        "skills": [
+            "Python",
             "Pytest",
+            "Allure",
+            "API Automation",
+            "OpenAPI",
+            "LLM-assisted Tooling",
+            "Kubernetes",
+            "Cloud APIs"
+        ],
+        "tools": [
+            "Python",
+            "Pytest",
+            "Allure",
+            "OpenAPI",
+            "Streamlit",
+            "Postman",
+            "Git"
+        ],
+        "highlights": [
+            "Reduced manual validation effort by about 70% through reusable API automation across cloud infrastructure services.",
+            "Connected API changes, execution summaries, and failure analysis into internal automation workflows.",
+            "Built the foundation for reliable validation across VPC, Kubernetes, storage, compute, registry, and GenAI APIs."
+        ]
+    },
+    {
+        "id": "e2e_cloud_sdet_intern",
+        "role": "SDET Intern",
+        "company": "E2E Networks (E2E Cloud)",
+        "company_url": "https://www.e2enetworks.com/",
+        "period": "Jan 2025 - Jul 2025",
+        "location": "Delhi, India (On-site)",
+        "description": [
+            "Built and maintained API automation for infrastructure services including VPCs, Kubernetes, shared file systems, compute nodes, container registry, and GenAI fine-tuning workflows.",
+            "Created scalable test structures, review checklists, and release validation notes to improve automation maintainability and team execution quality.",
+            "Validated cloud-native platform features such as node scaling, VM lifecycle operations, file-system quotas, registry access controls, and orchestration workflows."
+        ],
+        "skills": [
+            "API Testing",
+            "Python",
+            "Pytest",
+            "Cloud Infrastructure",
+            "Kubernetes",
+            "Docker",
+            "OpenAPI"
+        ],
+        "tools": [
+            "Python",
+            "Pytest",
+            "OpenAPI",
             "Postman",
             "Git",
             "Zoho"
         ],
         "highlights": [
-            "Designed reusable API test workflows that improved onboarding for new QA engineers.",
-            "Suggested improvements to automation logic and mock API integration, speeding up regression cycles.",
-            "Played a central role in aligning documentation and test coverage across product teams."
+            "Converted internship work into a full-time E2E role.",
+            "Built early ownership across cloud infrastructure API validation and release workflows."
         ]
     },
     {

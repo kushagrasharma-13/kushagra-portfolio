@@ -1,12 +1,14 @@
 {
     "programming": [
+        "Python",
         "Java",
-        "Python"
+        "TypeScript"
     ],
     "ml_dl_nlp": [
         "NLP",
         "RAG",
-        "GANs",
+        "LLMs",
+        "Prompt Engineering",
         "Agentic AI",
         "Deep Learning",
         "Machine Learning",
@@ -15,15 +17,15 @@
     ],
     "frameworks_libraries": [
         "Flask",
+        "FastAPI",
+        "Django",
+        "Django REST Framework",
+        "Pytest",
         "Keras",
         "NumPy",
         "Pandas",
-        "Django",
-        "Pytest",
-        "FastAPI",
         "Selenium",
         "LangChain",
-        "PyAutoGUI",
         "Streamlit",
         "TensorFlow",
         "Scikit-learn",
@@ -34,7 +36,9 @@
         "SQL",
         "Azure",
         "Docker",
+        "Kubernetes",
         "Qdrant",
+        "MySQL",
         "MongoDB",
         "OpenAPI",
         "Swagger",
@@ -42,6 +46,9 @@
     ],
     "others": [
         "CI/CD",
+        "API Documentation",
+        "API Automation",
+        "Cloud Platform APIs",
         "Leadership",
         "Project Management",
         "Team Collaboration",

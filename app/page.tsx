@@ -20,8 +20,8 @@ const Scene = dynamic(() => import('@/components/3d/Scene'), {
 // --- CONFIGURATION ---
 const featuredProjectSlugs = [
   "rag-patent-qa-system",
-  "brain-disease-detection-app",
-  "ai-powered-voice-assistant"
+  "ai-powered-voice-assistant",
+  "ai-powered-company-website-scraper"
 ];
 const featuredProjects = projectsData.filter(p => featuredProjectSlugs.includes(p.slug));
 
@@ -42,7 +42,7 @@ export default function HomePage() {
             Kushagra Sharma
           </h1>
           <p className="mt-4 text-lg text-gray-300 max-w-xl mx-auto">
-            AI Engineer specializing in building intelligent systems, from large language model applications to computer vision diagnostics.
+            Associate Software Engineer building Python backend systems, cloud platform APIs, GenAI/RAG applications, and AI-native developer tooling.
           </p>
           <div className="mt-8">
             <Link href="/projects" className="px-8 py-3 bg-blue-600/80 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-blue-500/80 transition-colors">

@@ -13,7 +13,7 @@ const AboutScene = dynamic(() => import('@/components/3d/AboutScene'), {
 const achievements = [
   { icon: Trophy, text: 'National Finalist at IBM ICE Hackathon 2024' },
   { icon: Trophy, text: 'Top 1% in Analysis & Algorithms Course at IIT Kharagpur' },
-  { icon: Trophy, text: 'Qualified for Smart India Hackathon (SIH) 2023' },
+  { icon: Trophy, text: 'First Prize - Smart India Hackathon Senior Software Edition' },
 ];
 
 export default function AboutPage() {
@@ -48,7 +48,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="text-blue-400" size={20} />
-                <span>Based in Agra, Uttar Pradesh, India</span>
+                <span>Based in Delhi, India</span>
               </li>
               <li className="flex items-center gap-3">
                 <HeartHandshake className="text-blue-400" size={20} />
@@ -64,13 +64,13 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-white mb-4">My Story</h2>
             <div className="text-gray-300 text-lg leading-relaxed space-y-4">
               <p>
-                From my first "Hello, World!" program, I've been captivated by the power of code to solve real-world problems. This passion led me to pursue a degree in Computer Science with a specialization in AI & Machine Learning, where I discovered my enthusiasm for building intelligent systems that can learn, adapt, and create.
+                From my first "Hello, World!" program, I've been captivated by the power of code to solve real-world problems. That curiosity led me into Computer Science with a specialization in AI & Machine Learning, and today it shows up in backend systems, cloud platform APIs, AI-native documentation, and GenAI/RAG applications.
               </p>
               <p>
-                My professional journey has allowed me to apply these skills in diverse, fast-paced environments. At StoryVord, I engineered AI bots to streamline film production logistics, while at WhatBytes, I built robust backend systems for ad-tech platforms. Currently, as an SDET at E2E Cloud, I'm ensuring the reliability of mission-critical cloud infrastructure, from Kubernetes services to GenAI workflows.
+                My professional journey has allowed me to apply these skills in diverse, fast-paced environments. At StoryVord, I engineered LLM-powered assistant bots for film-production workflows, while at WhatBytes, I built Django backend systems for ad-tech platforms. Currently, as an Associate Software Engineer at E2E Networks, I work across Python backend engineering, cloud platform APIs, AI-native documentation, billing workflow architecture, and internal developer tooling.
               </p>
               <p>
-                I am driven by a constant curiosity and a desire to build tools that are not only technically excellent but also intuitive and impactful. Whether it's developing a medical diagnostic tool in an 8-hour hackathon or meticulously preparing a dataset for NLP tasks, I thrive on challenges that push the boundaries of what's possible.
+                I am driven by a constant curiosity and a desire to build tools that are technically strong, practical, and easy for other developers to use. Whether I am improving cloud documentation for LLM discoverability, building API automation, or shipping a RAG assistant over patent documents, I like work where engineering craft meets real user utility.
               </p>
             </div>
 
