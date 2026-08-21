@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Mail, Linkedin, Github, Youtube, FileText } from 'lucide-react';
 
 const socialLinks = [
-  { href: 'mailto:sharmakushagra2b@gmail.com', icon: <Mail size={20} />, label: 'Email' },
+  { href: 'mailto:sharmakushagra295@gmail.com', icon: <Mail size={20} />, label: 'Email' },
   { href: 'https://www.linkedin.com/in/kush-shrm', icon: <Linkedin size={20} />, label: 'LinkedIn' },
   { href: 'https://github.com/kushagrasharma-13', icon: <Github size={20} />, label: 'GitHub' },
   {
@@ -18,7 +18,7 @@ const socialLinks = [
     label: 'Hugging Face'
   },
   { href: 'https://www.youtube.com/@KushagraSharma-13', icon: <Youtube size={20} />, label: 'YouTube' },
-  { href: 'https://drive.google.com/file/d/1EI4bup_Ua4kl4mtfFYtOWX7drJ_-dO8K/view?usp=sharing', icon: <FileText size={20} />, label: 'Resume' },
+  { href: '/Kushagra_Sharma_Resume.pdf', icon: <FileText size={20} />, label: 'Resume' },
 ];
 
 export default function Footer() {

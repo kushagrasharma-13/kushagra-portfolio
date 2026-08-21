@@ -113,7 +113,7 @@
         "title": "Brain Disease Detection Web App",
         "category": "Computer Vision",
         "subtitle": "Solo Project",
-        "summary": "An end-to-end medical AI diagnostic platform built with Streamlit, capable of detecting brain diseases from MRI images. The platform uses MongoDB for secure user authentication and TensorFlow/Keras models to classify Alzheimer’s disease (4 stages) and brain tumors (4 types) with over 90% accuracy.",
+        "summary": "A Streamlit-based medical imaging learning prototype for MRI image classification workflows. The platform combines MongoDB-backed user authentication with TensorFlow/Keras inference flows for Alzheimer's-stage and brain-tumor category prediction experiments.",
         "techStack": [
             "Python",
             "TensorFlow",
@@ -148,11 +148,11 @@
             }
         ],
         "impact": [
-            "Achieved >90% classification accuracy for both Alzheimer and Brain Tumor models on test sets.",
-            "Demonstrates practical use of AI in healthcare diagnostics.",
-            "Rejected non-MRI images with a strict probability threshold to ensure reliability."
+            "Demonstrates end-to-end model-serving, authentication, image preprocessing, and Streamlit application wiring.",
+            "Explores practical AI workflow design in a high-care domain without presenting the system as a clinical diagnostic product.",
+            "Includes probability-threshold logic for handling uncertain image inputs."
         ],
-        "learning": "Fully built—from authentication to model integration—by a single developer. Validates the ability to independently handle model training, frontend/backend integration, and user security & session management.",
+        "learning": "Fully built from authentication to model integration as a single-developer learning project. Useful for demonstrating model-serving, frontend/backend integration, and session-management fundamentals.",
         "github_repo": null,
         "huggingface_link": "https://huggingface.co/spaces/kushagrasharma-13/streamlit-medical-app-v2",
         "kaggle_link": "https://www.kaggle.com/code/kushagrasharma133/brain-tumor-app",

@@ -9,8 +9,8 @@ import { Analytics } from "@vercel/analytics/next"
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Kushagra Sharma | AI & Backend Developer',
-  description: 'The professional portfolio of Kushagra Sharma, showcasing projects in AI, Machine Learning, and Backend Development.',
+  title: 'Kushagra Sharma | Software Engineer, Python Backend & GenAI',
+  description: 'The professional portfolio of Kushagra Sharma, showcasing backend engineering, cloud APIs, GenAI/RAG applications, and developer tooling.',
 };
 
 export default function RootLayout({
